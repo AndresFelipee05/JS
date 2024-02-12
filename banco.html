@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>HOLA    </h2>
+    <label><button onclick="Ingreso()">Pulse para ingresar</button></label><br><br>
+
+    <script>
+        
+
+        function Calcular(n1){
+            IVA = (n1*0.21);
+            total = IVA + Number(n1);
+            return total;
+
+        }
+
+        function Ingreso(){
+            
+
+            let n = prompt ('Introduzca el dinero');
+
+            if(Number(n)<=2000){
+
+                alert ("El dinero con el IVA es de: "+Calcular(n)+"€");
+
+            } else {
+                alert ('No se puede realizar, llame al banco');
+            }
+        }
+    </script>
+</body>
+</html>
