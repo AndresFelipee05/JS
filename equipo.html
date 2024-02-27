@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+    #imagen {
+        display: none;
+    }       
+    </style>
+</head>
+<body>
+    
+    <h1>Equipos de Fútbol</h1>
+
+    <label>Equipo:</label>
+    <select id="equipo" onchange="CambiaEquipo()">
+        <option value="RM">Real Madrid</option>
+        <option value="BC">Barcelona</option>
+        <option value="ninguno" selected>Elija equipo</option>
+    </select>
+
+    <br><br>
+    <img src="" alt="" id="imagen" width="200" height="200">
+    <h1 id="titulo"></h1>
+
+    <div id="display">
+
+    </div>
+
+    <script>
+        function CambioAtributo(equipo){
+            let imagen = document.getElementById("imagen");
+            let titulo = document.getElementById("titulo");
+            realmadrid = ["Bale","Cristiano","Ronaldo","Pepe"];
+            barcelona = ["Messi","Xavi","Andres","Pedri"];
+
+            if (equipo == "RM"){
+                imagen.src = "realmadrid.jpg";
+                titulo.innerHTML = "Alineacion del Real Madrid";
+                imagen.style.display = "block";
+                ImprimeAlineacion(realmadrid);
+            } 
+            if(equipo == "BC") {
+                imagen.src = "barcelona.jpg";
+                titulo.innerHTML = "Alineacion del Barcelona";
+                imagen.style.display = "block";
+                ImprimeAlineacion(barcelona);
+                
+            }
+            if(equipo == "ninguno"){
+                imagen.src = "";
+                titulo.innerHTML = "";
+                imagen.style.display = "none";
+                ImprimeAlineacion("");
+
+            }            
+        }
+
+        function CambiaEquipo(){
+            let equipoObj = document.getElementById("equipo").value;
+
+            CambioAtributo(equipoObj);
+        }
+
+        function ImprimeAlineacion(alineacion){
+            display = document.getElementById("display");
+            display.innerHTML = "";
+            for (i = 0; i<alineacion.length; i++){
+                display.innerHTML += alineacion [i]+ "<br>";
+            }
+        }
+    </script>
+</body>
+</html>
