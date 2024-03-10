@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <select name="pais" id="pais" onchange="ElegirOpcion()">
+        <option value="elija">Elija destino</option>
+        <option value="espana">España</option>
+        <option value="fuera">Fuera de España</option>
+
+    </select>
+    <br><br>
+
+
+    <select name="provincia" id="provincia" hidden>
+        <option value="AB">Albacete</option>
+        <option value="T">Toledo</option>
+        <option value="CR">Ciudad Real</option>
+
+    </select>
+    
+    <script>
+        function ElegirOpcion(){
+            var selected = document.getElementById("pais").value; 
+            var select = document.getElementById("provincia");
+
+            if(selected == "espana"){
+                select.removeAttribute('hidden');
+            } else {
+                select.setAttribute('hidden', '');
+            }
+        }
+
+    </script>
+</body>
+</html>
